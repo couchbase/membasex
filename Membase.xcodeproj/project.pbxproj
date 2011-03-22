@@ -10,13 +10,15 @@
 		DA28356E13392962009A4AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA28356D13392962009A4AEF /* Cocoa.framework */; };
 		DA28357813392962009A4AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA28357613392962009A4AEF /* InfoPlist.strings */; };
 		DA28357B13392962009A4AEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA28357A13392962009A4AEF /* main.m */; };
-		DA28357E13392962009A4AEF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DA28357C13392962009A4AEF /* Credits.rtf */; };
 		DA28358113392962009A4AEF /* MembaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA28358013392962009A4AEF /* MembaseAppDelegate.m */; };
 		DA28358413392962009A4AEF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA28358213392962009A4AEF /* MainMenu.xib */; };
 		DA28358B13392962009A4AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA28356D13392962009A4AEF /* Cocoa.framework */; };
 		DA28359313392962009A4AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA28359113392962009A4AEF /* InfoPlist.strings */; };
 		DA28359613392962009A4AEF /* MembaseTests.h in Resources */ = {isa = PBXBuildFile; fileRef = DA28359513392962009A4AEF /* MembaseTests.h */; };
 		DA28359813392962009A4AEF /* MembaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA28359713392962009A4AEF /* MembaseTests.m */; };
+		DA379BE91339314B008B7BBC /* Membase-status.png in Resources */ = {isa = PBXBuildFile; fileRef = DA379BE81339314B008B7BBC /* Membase-status.png */; };
+		DA379BEB13393162008B7BBC /* Membase.icns in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEA13393162008B7BBC /* Membase.icns */; };
+		DA379BED13393242008B7BBC /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEC13393242008B7BBC /* Credits.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +37,22 @@
 		DA28357013392962009A4AEF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DA28357113392962009A4AEF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DA28357213392962009A4AEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DA28357513392962009A4AEF /* Membase-Info.plist */ = {isa = PBXFileReference; path = "Membase-Info.plist"; sourceTree = "<group>"; };
+		DA28357513392962009A4AEF /* Membase-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Membase-Info.plist"; sourceTree = "<group>"; };
 		DA28357713392962009A4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DA28357913392962009A4AEF /* Membase-Prefix.pch */ = {isa = PBXFileReference; path = "Membase-Prefix.pch"; sourceTree = "<group>"; };
+		DA28357913392962009A4AEF /* Membase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Membase-Prefix.pch"; sourceTree = "<group>"; };
 		DA28357A13392962009A4AEF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA28357D13392962009A4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		DA28357F13392962009A4AEF /* MembaseAppDelegate.h */ = {isa = PBXFileReference; path = MembaseAppDelegate.h; sourceTree = "<group>"; };
+		DA28357F13392962009A4AEF /* MembaseAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MembaseAppDelegate.h; sourceTree = "<group>"; };
 		DA28358013392962009A4AEF /* MembaseAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MembaseAppDelegate.m; sourceTree = "<group>"; };
 		DA28358313392962009A4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DA28358A13392962009A4AEF /* MembaseTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MembaseTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA28359013392962009A4AEF /* MembaseTests-Info.plist */ = {isa = PBXFileReference; path = "MembaseTests-Info.plist"; sourceTree = "<group>"; };
+		DA28359013392962009A4AEF /* MembaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MembaseTests-Info.plist"; sourceTree = "<group>"; };
 		DA28359213392962009A4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DA28359413392962009A4AEF /* MembaseTests-Prefix.pch */ = {isa = PBXFileReference; path = "MembaseTests-Prefix.pch"; sourceTree = "<group>"; };
+		DA28359413392962009A4AEF /* MembaseTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MembaseTests-Prefix.pch"; sourceTree = "<group>"; };
 		DA28359513392962009A4AEF /* MembaseTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MembaseTests.h; sourceTree = "<group>"; };
 		DA28359713392962009A4AEF /* MembaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MembaseTests.m; sourceTree = "<group>"; };
+		DA379BE81339314B008B7BBC /* Membase-status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status.png"; sourceTree = "<group>"; };
+		DA379BEA13393162008B7BBC /* Membase.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Membase.icns; sourceTree = SOURCE_ROOT; };
+		DA379BEC13393242008B7BBC /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +127,13 @@
 		DA28357413392962009A4AEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA379BEC13393242008B7BBC /* Credits.html */,
+				DA379BEA13393162008B7BBC /* Membase.icns */,
+				DA379BE81339314B008B7BBC /* Membase-status.png */,
 				DA28357513392962009A4AEF /* Membase-Info.plist */,
 				DA28357613392962009A4AEF /* InfoPlist.strings */,
 				DA28357913392962009A4AEF /* Membase-Prefix.pch */,
 				DA28357A13392962009A4AEF /* main.m */,
-				DA28357C13392962009A4AEF /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -223,8 +229,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA28357813392962009A4AEF /* InfoPlist.strings in Resources */,
-				DA28357E13392962009A4AEF /* Credits.rtf in Resources */,
 				DA28358413392962009A4AEF /* MainMenu.xib in Resources */,
+				DA379BE91339314B008B7BBC /* Membase-status.png in Resources */,
+				DA379BEB13393162008B7BBC /* Membase.icns in Resources */,
+				DA379BED13393242008B7BBC /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,14 +298,6 @@
 				DA28357713392962009A4AEF /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		DA28357C13392962009A4AEF /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA28357D13392962009A4AEF /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		DA28358213392962009A4AEF /* MainMenu.xib */ = {
@@ -444,6 +444,7 @@
 				DA28359D13392962009A4AEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA28359E13392962009A4AEF /* Build configuration list for PBXNativeTarget "MembaseTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +453,7 @@
 				DA2835A013392962009A4AEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

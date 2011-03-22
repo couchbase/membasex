@@ -10,9 +10,36 @@
 
 @interface MembaseAppDelegate : NSObject <NSApplicationDelegate> {
 @private
-    NSWindow *window;
+    NSStatusItem *statusBar;
+    IBOutlet NSMenu *statusMenu;
+    
+    IBOutlet NSMenuItem *launchBrowserItem;
+    IBOutlet NSMenuItem *launchAtStartupItem;
+    
+    NSTask *task;
+    NSPipe *in, *out;
+    
+    BOOL hasSeenStart;
+    time_t startTime;
 }
 
-@property (assign) IBOutlet NSWindow *window;
+-(IBAction)start:(id)sender;
+-(IBAction)browse:(id)sender;
+
+-(void)launchMembase;
+-(void)stop;
+-(void)openGUI;
+-(void)taskTerminated:(NSNotification *)note;
+-(void)cleanup;
+-(NSString *)applicationSupportFolder;
+
+-(void)updateAddItemButtonState;
+
+-(IBAction)setLaunchPref:(id)sender;
+-(IBAction)changeLoginItems:(id)sender;
+
+-(IBAction)showAboutPanel:(id)sender;
+-(IBAction)showTechSupport:(id)sender;
+
 
 @end
