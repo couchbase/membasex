@@ -138,28 +138,30 @@
 -(void)updateConfig
 {
 	// determine data dir
-	NSString *dataDir = [self applicationSupportFolder];
-    NSLog(@"App support dir:  %@", dataDir);
-    assert(dataDir);
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+	NSString *appSupport = [self applicationSupportFolder];
+    NSLog(@"App support dir:  %@", appSupport);
+    assert(appSupport);
 	// create if it doesn't exist
-    [self mkdirP:[dataDir stringByAppendingPathComponent:@"data"]];
-    [self mkdirP:[dataDir stringByAppendingPathComponent:@"priv"]];
-    [self mkdirP:[dataDir stringByAppendingPathComponent:@"config"]];
-    [self mkdirP:[dataDir stringByAppendingPathComponent:@"logs"]];
-    [self mkdirP:[dataDir stringByAppendingPathComponent:@"mnesia"]];
-    [self mkdirP:[dataDir stringByAppendingPathComponent:@"tmp"]];
+    [self mkdirP:[appSupport stringByAppendingPathComponent:@"data"]];
+    [self mkdirP:[appSupport stringByAppendingPathComponent:@"priv"]];
+    [self mkdirP:[appSupport stringByAppendingPathComponent:@"config"]];
+    [self mkdirP:[appSupport stringByAppendingPathComponent:@"logs"]];
+    [self mkdirP:[appSupport stringByAppendingPathComponent:@"mnesia"]];
+    [self mkdirP:[appSupport stringByAppendingPathComponent:@"tmp"]];
 
     NSString *initSqlProto = [[NSBundle mainBundle] pathForResource:@"init" ofType:@"sql"];
-    NSString *initSql = [dataDir stringByAppendingPathComponent:@"priv/init.sql"];
+    NSString *initSql = [appSupport stringByAppendingPathComponent:@"priv/init.sql"];
 
-    if(![[NSFileManager defaultManager] fileExistsAtPath:initSql]) {
-        assert([[NSFileManager defaultManager] fileExistsAtPath:initSqlProto]);
-        [[NSFileManager defaultManager] copyItemAtPath:initSqlProto
-                                                toPath:initSql
-                                                 error:nil];
+    if(![fileManager fileExistsAtPath:initSql]) {
+        assert([fileManager fileExistsAtPath:initSqlProto]);
+        [fileManager copyItemAtPath:initSqlProto
+                             toPath:initSql
+                              error:nil];
     }
 
-    NSString *conf = [NSString stringWithFormat:@"{directory, \"%@\"}.\n", dataDir, nil];
+    NSString *conf = [NSString stringWithFormat:@"{directory, \"%@\"}.\n", appSupport, nil];
     assert(conf);
     NSLog(@"Config:  %@", conf);
 
@@ -169,6 +171,15 @@
 	[confFile appendString:[[NSBundle mainBundle] resourcePath]];
 	[confFile appendString:@"/membase-core/priv/config"];
     NSLog(@"Config file:  %@", confFile);
+
+    // Fix up the packaged data dir
+    NSString *dataDir = [appSupport stringByAppendingPathComponent:@"data"];
+    NSString *appDataDir = [[[NSBundle mainBundle] resourcePath]
+                            stringByAppendingPathComponent:@"membase-core/data"];
+    if ([fileManager fileExistsAtPath:appDataDir]) {
+        [fileManager removeItemAtPath:appDataDir error:nil];
+    }
+    [fileManager createSymbolicLinkAtPath:appDataDir withDestinationPath:dataDir error:nil];
 
     [conf writeToFile:confFile atomically:YES encoding:NSUTF8StringEncoding error:NULL];
 	[confFile release];
