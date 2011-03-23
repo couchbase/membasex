@@ -21,7 +21,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.6.5</string>
 	<key>HomePage</key>
-	<string>http://www.couchbase.com/</string>
+	<string>http://127.0.0.1:8091/</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.business</string>
 	<key>LSMinimumSystemVersion</key>

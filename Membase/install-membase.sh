@@ -12,15 +12,16 @@ do
     rsync -a "$topdir/ns_server/$p" "$dest/$p"
 done
 
-mkdir "$dest/priv" "$dest/logs" "$dest/config" "$dest/tmp"
+mkdir -p "$dest/priv" "$dest/logs" "$dest/config" "$dest/tmp"
 touch "$dest/priv/config"
+cp "$topdir/ns_server/priv/init.sql" "$dest/priv/init.sql"
 
 # Memcached and engines.
 mkdir -p "$dest/bin/memcached" "$dest/bin/bucket_engine"
 mkdir -p "$dest/bin/ep_engine" "$dest/bin/moxi" "$dest/bin/vbucketmigrator"
 
 cp "$topdir/bucket_engine/.libs/bucket_engine.so" "$dest/bin/bucket_engine"
-cp "$topdir/ep-engine/.libs/ep.so" "$dest/bin/ep-engine"
+cp "$topdir/ep-engine/.libs/ep.so" "$dest/bin/ep_engine/"
 for f in default_engine.so stdin_term_handler.so syslog_logger.so
 do
     cp "$topdir/memcached/.libs/$f" "$dest/bin/memcached/"

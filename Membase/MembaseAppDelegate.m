@@ -19,10 +19,7 @@
 
 -(void)applicationWillTerminate:(NSNotification *)notification
 {
-}
-
-- (void)windowWillClose:(NSNotification *)aNotification 
-{
+    NSLog(@"Terminating.");
     [self stop];
 }
 
@@ -101,63 +98,29 @@
     return [self applicationSupportFolder:@"CouchbaseServer"];
 }
 
--(void)maybeSetDataDirs
-{
-    return; // XXX:  This may be necessary.
-
-	// determine data dir
-	NSString *dataDir = [self applicationSupportFolder];
-	// create if it doesn't exist
-	if(![[NSFileManager defaultManager] fileExistsAtPath:dataDir]) {
-		[[NSFileManager defaultManager] createDirectoryAtPath:dataDir withIntermediateDirectories:YES attributes:nil error:NULL];
-	}
-    
-	// if data dirs are not set in local.ini
-	NSMutableString *iniFile = [[NSMutableString alloc] init];
-	[iniFile appendString:[[NSBundle mainBundle] resourcePath]];
-	[iniFile appendString:@"/couchdbx-core/etc/couchdb/local.ini"];
-    NSLog(@"Loading stuff from %@", iniFile);
-	NSString *ini = [NSString stringWithContentsOfFile:iniFile encoding:NSUTF8StringEncoding error:NULL];
-    assert(ini);
-	NSRange found = [ini rangeOfString:dataDir];
-	if(found.length == 0) {
-		//   set them
-		NSMutableString *newIni = [[NSMutableString alloc] init];
-        assert(newIni);
-		[newIni appendString: ini];
-		[newIni appendString:@"[couchdb]\ndatabase_dir = "];
-		[newIni appendString:dataDir];
-		[newIni appendString:@"\nview_index_dir = "];
-		[newIni appendString:dataDir];
-		[newIni appendString:@"\n\n"];
-		[newIni appendString:@"[query_servers]\njavascript = bin/couchjs share/couchdb/server/main.js"];
-		[newIni writeToFile:iniFile atomically:YES encoding:NSUTF8StringEncoding error:NULL];
-		[newIni release];
-	}
-	[iniFile release];
-	// done
-}
-
 -(void)launchMembase
 {
-    return; // XXX:  Should do something else.
-	[self maybeSetDataDirs];
-    
 	in = [[NSPipe alloc] init];
 	out = [[NSPipe alloc] init];
 	task = [[NSTask alloc] init];
     
     startTime = time(NULL);
-    
+
+    NSDictionary *env = [NSDictionary dictionaryWithObjectsAndKeys:
+                         @"./bin:/bin:/usr/bin", @"PATH",
+                         NSHomeDirectory(), @"HOME",
+                         nil, nil];
+
 	NSMutableString *launchPath = [[NSMutableString alloc] init];
 	[launchPath appendString:[[NSBundle mainBundle] resourcePath]];
-	[launchPath appendString:@"/couchdbx-core"];
+	[launchPath appendString:@"/membase-core"];
 	[task setCurrentDirectoryPath:launchPath];
     
-	[launchPath appendString:@"/bin/couchdb"];
+	[launchPath appendString:@"/start_shell.sh"];
     NSLog(@"Launching '%@'", launchPath);
 	[task setLaunchPath:launchPath];
 	NSArray *args = [[NSArray alloc] initWithObjects:@"-i", nil];
+    [task setEnvironment:env];
 	[task setArguments:args];
 	[task setStandardInput:in];
 	[task setStandardOutput:out];
@@ -196,7 +159,7 @@
     }
     
     [NSTimer scheduledTimerWithTimeInterval:1.0
-                                     target:self selector:@selector(launchCouchDB)
+                                     target:self selector:@selector(launchMembase)
                                    userInfo:nil
                                     repeats:NO];
 }
@@ -233,7 +196,7 @@
                                         encoding: NSUTF8StringEncoding];
     
     if (!hasSeenStart) {
-        if ([s hasPrefix:@"Apache CouchDB has started"]) {
+        if ([s rangeOfString:@"Membase Server has started on web port 8091"].location != NSNotFound) {
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             if ([defaults boolForKey:@"browseAtStart"]) {
                 [self openGUI];
