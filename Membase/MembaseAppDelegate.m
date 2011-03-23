@@ -9,6 +9,7 @@
 #import "MembaseAppDelegate.h"
 
 #define MIN_LIFETIME 10
+#define FORCEKILL_INTERVAL 15.0
 
 @implementation MembaseAppDelegate
 
@@ -20,7 +21,16 @@
 -(void)applicationWillTerminate:(NSNotification *)notification
 {
     NSLog(@"Terminating.");
-    [self stop];
+}
+
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
+    BOOL isRunning = [task isRunning];
+    shuttingDown = YES;
+    NSLog(@"Asked if we should terminate with%s task running.", isRunning ? "" : "out");
+    if (isRunning) {
+        [self stopTask];
+    }
+    return isRunning ? NSTerminateLater : NSTerminateNow;
 }
 
 -(void)applicationWillFinishLaunching:(NSNotification *)notification
@@ -38,6 +48,7 @@
 -(void)awakeFromNib
 {
     hasSeenStart = NO;
+    shuttingDown = NO;
     
     [[NSUserDefaults standardUserDefaults]
      registerDefaults: [NSDictionary dictionaryWithObjectsAndKeys:
@@ -62,19 +73,30 @@
 -(IBAction)start:(id)sender
 {
     if([task isRunning]) {
-        [self stop];
+        [self stopTask];
         return;
     } 
     
     [self launchMembase];
 }
 
--(void)stop
+-(void)killTask {
+    NSLog(@"Force terminating task");
+    [task terminate];
+}
+
+-(void)stopTask
 {
     NSFileHandle *writer;
     writer = [in fileHandleForWriting];
     [writer writeData:[@"q().\n" dataUsingEncoding:NSASCIIStringEncoding]];
     [writer closeFile];
+    taskKiller = [NSTimer timerWithTimeInterval:FORCEKILL_INTERVAL
+                                         target:self
+                                       selector:@selector(killTask)
+                                       userInfo:nil
+                                            repeats:NO];
+    [[NSRunLoop currentRunLoop] addTimer:taskKiller forMode:NSModalPanelRunLoopMode];
 }
 
 /* found at http://www.cocoadev.com/index.pl?ApplicationSupportFolder */
@@ -193,25 +215,33 @@
 {
     NSLog(@"Terminated with status %d", [[note object] terminationStatus]);
     [self cleanup];
-    
-    time_t now = time(NULL);
-    if (now - startTime < MIN_LIFETIME) {
-        NSInteger b = NSRunAlertPanel(@"Problem Running Couchbase",
-                                      @"Couchbase Server doesn't seem to be operating properly.  "
-                                      @"Check Console logs for more details.", @"Retry", @"Quit", nil);
-        if (b == NSAlertAlternateReturn) {
-            [NSApp terminate:self];
+
+    if (shuttingDown) {
+        [NSApp replyToApplicationShouldTerminate:NSTerminateNow];
+    } else {
+        time_t now = time(NULL);
+        if (now - startTime < MIN_LIFETIME) {
+            NSInteger b = NSRunAlertPanel(@"Problem Running Couchbase",
+                                          @"Couchbase Server doesn't seem to be operating properly.  "
+                                          @"Check Console logs for more details.", @"Retry", @"Quit", nil);
+            if (b == NSAlertAlternateReturn) {
+                [NSApp terminate:self];
+            }
         }
+
+        [NSTimer scheduledTimerWithTimeInterval:1.0
+                                         target:self selector:@selector(launchMembase)
+                                       userInfo:nil
+                                        repeats:NO];
     }
-    
-    [NSTimer scheduledTimerWithTimeInterval:1.0
-                                     target:self selector:@selector(launchMembase)
-                                   userInfo:nil
-                                    repeats:NO];
 }
 
 -(void)cleanup
 {
+    // Cancel our timer (may or may not have run).
+    [taskKiller invalidate];
+    taskKiller = nil;
+
     [task release];
     task = nil;
     

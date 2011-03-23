@@ -17,17 +17,20 @@
     IBOutlet NSMenuItem *launchAtStartupItem;
     
     NSTask *task;
+    NSTimer *taskKiller;
     NSPipe *in, *out;
     
     BOOL hasSeenStart;
     time_t startTime;
+
+    BOOL shuttingDown;
 }
 
 -(IBAction)start:(id)sender;
 -(IBAction)browse:(id)sender;
 
 -(void)launchMembase;
--(void)stop;
+-(void)stopTask;
 -(void)openGUI;
 -(void)taskTerminated:(NSNotification *)note;
 -(void)cleanup;
