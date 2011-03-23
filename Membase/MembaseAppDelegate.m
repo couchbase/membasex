@@ -157,9 +157,7 @@
 	[launchPath appendString:@"/start_shell.sh"];
     NSLog(@"Launching '%@'", launchPath);
 	[task setLaunchPath:launchPath];
-	NSArray *args = [[NSArray alloc] initWithObjects:@"-i", nil];
     [task setEnvironment:env];
-	[task setArguments:args];
 	[task setStandardInput:in];
 	[task setStandardOutput:out];
     
