@@ -28,6 +28,7 @@
 
 -(IBAction)start:(id)sender;
 -(IBAction)browse:(id)sender;
+-(IBAction)teardown:(id)sender;
 
 -(void)launchMembase;
 -(void)stopTask;

@@ -30,7 +30,12 @@
     if (isRunning) {
         [self stopTask];
     }
-    return isRunning ? NSTerminateLater : NSTerminateNow;
+    return isRunning ? NSTerminateCancel : NSTerminateNow;
+}
+
+-(void)teardown:(id)sender {
+    shuttingDown = YES;
+    [self stopTask];
 }
 
 -(void)applicationWillFinishLaunching:(NSNotification *)notification
@@ -87,16 +92,18 @@
 
 -(void)stopTask
 {
+    if (taskKiller) {
+        return; // Already shutting down.
+    }
     NSFileHandle *writer;
     writer = [in fileHandleForWriting];
     [writer writeData:[@"q().\n" dataUsingEncoding:NSASCIIStringEncoding]];
     [writer closeFile];
-    taskKiller = [NSTimer timerWithTimeInterval:FORCEKILL_INTERVAL
-                                         target:self
-                                       selector:@selector(killTask)
-                                       userInfo:nil
-                                            repeats:NO];
-    [[NSRunLoop currentRunLoop] addTimer:taskKiller forMode:NSModalPanelRunLoopMode];
+    taskKiller = [NSTimer scheduledTimerWithTimeInterval:FORCEKILL_INTERVAL
+                                                  target:self
+                                                selector:@selector(killTask)
+                                                userInfo:nil
+                                                 repeats:NO];
 }
 
 /* found at http://www.cocoadev.com/index.pl?ApplicationSupportFolder */
@@ -217,7 +224,7 @@
     [self cleanup];
 
     if (shuttingDown) {
-        [NSApp replyToApplicationShouldTerminate:NSTerminateNow];
+        [NSApp terminate:self];
     } else {
         time_t now = time(NULL);
         if (now - startTime < MIN_LIFETIME) {
