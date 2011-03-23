@@ -95,11 +95,49 @@
 }
 
 - (NSString *)applicationSupportFolder {
-    return [self applicationSupportFolder:@"CouchbaseServer"];
+    return [self applicationSupportFolder:@"Membase"];
+}
+
+-(void)mkdirP:(NSString *)p {
+    if(![[NSFileManager defaultManager] fileExistsAtPath:p]) {
+		[[NSFileManager defaultManager] createDirectoryAtPath:p withIntermediateDirectories:YES attributes:nil error:NULL];
+	}
+}
+
+-(void)updateConfig
+{
+	// determine data dir
+	NSString *dataDir = [self applicationSupportFolder];
+    NSLog(@"App support dir:  %@", dataDir);
+    assert(dataDir);
+	// create if it doesn't exist
+    [self mkdirP:[dataDir stringByAppendingPathComponent:@"data"]];
+    [self mkdirP:[dataDir stringByAppendingPathComponent:@"priv"]];
+    [self mkdirP:[dataDir stringByAppendingPathComponent:@"config"]];
+    [self mkdirP:[dataDir stringByAppendingPathComponent:@"logs"]];
+    [self mkdirP:[dataDir stringByAppendingPathComponent:@"mnesia"]];
+    [self mkdirP:[dataDir stringByAppendingPathComponent:@"tmp"]];
+
+    NSString *conf = [NSString stringWithFormat:@"{directory, \"%@\"}.\n", dataDir, nil];
+    assert(conf);
+    NSLog(@"Config:  %@", conf);
+
+	// if data dirs are not set in local.ini
+	NSMutableString *confFile = [[NSMutableString alloc] init];
+    assert(confFile);
+	[confFile appendString:[[NSBundle mainBundle] resourcePath]];
+	[confFile appendString:@"/membase-core/priv/config"];
+    NSLog(@"Config file:  %@", confFile);
+
+    [conf writeToFile:confFile atomically:YES encoding:NSUTF8StringEncoding error:NULL];
+	[confFile release];
+	// done
 }
 
 -(void)launchMembase
 {
+    [self updateConfig];
+
 	in = [[NSPipe alloc] init];
 	out = [[NSPipe alloc] init];
 	task = [[NSTask alloc] init];
