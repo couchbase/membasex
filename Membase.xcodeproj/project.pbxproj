@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0FF0B51339A4B600B9E4DE /* install-membase.sh in Resources */ = {isa = PBXBuildFile; fileRef = DA0FF0B41339A4B600B9E4DE /* install-membase.sh */; };
 		DA28356E13392962009A4AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA28356D13392962009A4AEF /* Cocoa.framework */; };
 		DA28357813392962009A4AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA28357613392962009A4AEF /* InfoPlist.strings */; };
 		DA28357B13392962009A4AEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA28357A13392962009A4AEF /* main.m */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0FF0B41339A4B600B9E4DE /* install-membase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "install-membase.sh"; sourceTree = "<group>"; };
 		DA28356913392962009A4AEF /* Membase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Membase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA28356D13392962009A4AEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA28357013392962009A4AEF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -134,6 +136,7 @@
 				DA28357613392962009A4AEF /* InfoPlist.strings */,
 				DA28357913392962009A4AEF /* Membase-Prefix.pch */,
 				DA28357A13392962009A4AEF /* main.m */,
+				DA0FF0B41339A4B600B9E4DE /* install-membase.sh */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				DA28356613392962009A4AEF /* Frameworks */,
 				DA28356713392962009A4AEF /* Resources */,
 				DA0FF09B13399B0D00B9E4DE /* Install Erlang */,
+				DA0FF0B31339A49300B9E4DE /* Install Membase */,
 			);
 			buildRules = (
 			);
@@ -234,6 +238,7 @@
 				DA379BE91339314B008B7BBC /* Membase-status.png in Resources */,
 				DA379BEB13393162008B7BBC /* Membase.icns in Resources */,
 				DA379BED13393242008B7BBC /* Credits.html in Resources */,
+				DA0FF0B51339A4B600B9E4DE /* install-membase.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +267,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "VER=\"R14B01-OSX-10.6.6\"\nFN=\"erlang-$VER.tgz\"\nURL=\"http://downloads.northscale.com/builddeps/$FN\"\n\ndest=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/membase-core\"\nmkdir -p \"$dest\"\n\ntest -f \"$FN\" || curl -sfO \"$URL\"\n\ncd \"$dest\"\ngzip -dc \"$PROJECT_DIR/$FN\" | tar xf -\necho \"Installed erlang $VER into $dest\"";
+		};
+		DA0FF0B31339A49300B9E4DE /* Install Membase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Membase/install-membase.sh",
+			);
+			name = "Install Membase";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "exec \"$SCRIPT_INPUT_FILE_0\"\n";
 		};
 		DA28358813392962009A4AEF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
