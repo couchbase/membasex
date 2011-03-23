@@ -35,6 +35,8 @@
 
 -(void)teardown:(id)sender {
     shuttingDown = YES;
+    NSImage *statusIcon = [NSImage imageNamed:@"Membase-status-shutdown.png"];
+    [statusBar setImage: statusIcon];
     [self stopTask];
 }
 

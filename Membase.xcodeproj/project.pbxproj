@@ -20,6 +20,7 @@
 		DA379BE91339314B008B7BBC /* Membase-status.png in Resources */ = {isa = PBXBuildFile; fileRef = DA379BE81339314B008B7BBC /* Membase-status.png */; };
 		DA379BEB13393162008B7BBC /* Membase.icns in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEA13393162008B7BBC /* Membase.icns */; };
 		DA379BED13393242008B7BBC /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEC13393242008B7BBC /* Credits.html */; };
+		DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7620041339DC3E0062715D /* Membase-status-shutdown.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		DA379BE81339314B008B7BBC /* Membase-status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status.png"; sourceTree = "<group>"; };
 		DA379BEA13393162008B7BBC /* Membase.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Membase.icns; sourceTree = SOURCE_ROOT; };
 		DA379BEC13393242008B7BBC /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		DA7620041339DC3E0062715D /* Membase-status-shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-shutdown.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		DA28357413392962009A4AEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA7620041339DC3E0062715D /* Membase-status-shutdown.png */,
 				DA379BEC13393242008B7BBC /* Credits.html */,
 				DA379BEA13393162008B7BBC /* Membase.icns */,
 				DA379BE81339314B008B7BBC /* Membase-status.png */,
@@ -239,6 +242,7 @@
 				DA379BEB13393162008B7BBC /* Membase.icns in Resources */,
 				DA379BED13393242008B7BBC /* Credits.html in Resources */,
 				DA0FF0B51339A4B600B9E4DE /* install-membase.sh in Resources */,
+				DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
