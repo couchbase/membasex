@@ -181,8 +181,8 @@
 
 -(void)taskTerminated:(NSNotification *)note
 {
-    [self cleanup];
     NSLog(@"Terminated with status %d", [[note object] terminationStatus]);
+    [self cleanup];
     
     time_t now = time(NULL);
     if (now - startTime < MIN_LIFETIME) {
