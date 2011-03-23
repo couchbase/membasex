@@ -118,6 +118,16 @@
     [self mkdirP:[dataDir stringByAppendingPathComponent:@"mnesia"]];
     [self mkdirP:[dataDir stringByAppendingPathComponent:@"tmp"]];
 
+    NSString *initSqlProto = [[NSBundle mainBundle] pathForResource:@"init" ofType:@"sql"];
+    NSString *initSql = [dataDir stringByAppendingPathComponent:@"priv/init.sql"];
+
+    if(![[NSFileManager defaultManager] fileExistsAtPath:initSql]) {
+        assert([[NSFileManager defaultManager] fileExistsAtPath:initSqlProto]);
+        [[NSFileManager defaultManager] copyItemAtPath:initSqlProto
+                                                toPath:initSql
+                                                 error:nil];
+    }
+
     NSString *conf = [NSString stringWithFormat:@"{directory, \"%@\"}.\n", dataDir, nil];
     assert(conf);
     NSLog(@"Config:  %@", conf);

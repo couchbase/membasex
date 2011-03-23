@@ -13,8 +13,8 @@ do
 done
 
 mkdir -p "$dest/priv" "$dest/logs" "$dest/config" "$dest/tmp"
-touch "$dest/priv/config"
-cp "$topdir/ns_server/priv/init.sql" "$dest/priv/init.sql"
+cp "$topdir/ns_server/priv/init.sql" \
+    "$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/init.sql"
 
 # Memcached and engines.
 mkdir -p "$dest/bin/memcached" "$dest/bin/bucket_engine"
