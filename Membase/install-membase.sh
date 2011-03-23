@@ -6,6 +6,17 @@ topdir="$PROJECT_DIR/.."
 
 dest="$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/membase-core"
 
+clean_lib() {
+    while read something
+    do
+        base=${something##*/}
+        echo "Fixing $1 $something -> $dest/lib/$base"
+        test -f "$dest/lib/$base" || cp "$something" "$dest/lib/$base"
+        chmod 755 "$dest/lib/$base"
+        install_name_tool -change "$something" "lib/$base" "$1"
+    done
+}
+
 # ns_server bits
 for p in start_shell.sh browse_logs deps ebin
 do
@@ -34,3 +45,19 @@ cp "$topdir/moxi/moxi" "$dest/bin/moxi/moxi"
 # vbm
 cp "$topdir/vbucketmigrator/vbucketmigrator" \
     "$dest/bin/vbucketmigrator/vbucketmigrator"
+
+# Fun with libraries
+for f in bin/memcached/memcached bin/moxi/moxi \
+    bin/vbucketmigrator/vbucketmigrator
+do
+    fn="$dest/$f"
+    otool -L "$fn" | egrep -v "^[/a-z]" | grep -v /usr/lib \
+        | sed -e 's/(\(.*\))//g' | clean_lib "$fn"
+done
+
+# Fun with libraries
+for fn in "$dest"/lib/*.dylib
+do
+    otool -L "$fn" | egrep -v "^[/a-z]" | grep -v /usr/lib \
+        | sed -e 's/(\(.*\))//g' | clean_lib "$fn"
+done
