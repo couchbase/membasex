@@ -20,6 +20,7 @@
 		DA379BE91339314B008B7BBC /* Membase-status.png in Resources */ = {isa = PBXBuildFile; fileRef = DA379BE81339314B008B7BBC /* Membase-status.png */; };
 		DA379BEB13393162008B7BBC /* Membase.icns in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEA13393162008B7BBC /* Membase.icns */; };
 		DA379BED13393242008B7BBC /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEC13393242008B7BBC /* Credits.html */; };
+		DA61C6D8133AFA770095F5CF /* LoginItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA61C6D7133AFA770095F5CF /* LoginItemManager.m */; };
 		DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7620041339DC3E0062715D /* Membase-status-shutdown.png */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		DA379BE81339314B008B7BBC /* Membase-status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status.png"; sourceTree = "<group>"; };
 		DA379BEA13393162008B7BBC /* Membase.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Membase.icns; sourceTree = SOURCE_ROOT; };
 		DA379BEC13393242008B7BBC /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		DA61C6D6133AFA770095F5CF /* LoginItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItemManager.h; sourceTree = "<group>"; };
+		DA61C6D7133AFA770095F5CF /* LoginItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginItemManager.m; sourceTree = "<group>"; };
 		DA7620041339DC3E0062715D /* Membase-status-shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-shutdown.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +123,8 @@
 		DA28357313392962009A4AEF /* Membase */ = {
 			isa = PBXGroup;
 			children = (
+				DA61C6D6133AFA770095F5CF /* LoginItemManager.h */,
+				DA61C6D7133AFA770095F5CF /* LoginItemManager.m */,
 				DA28357F13392962009A4AEF /* MembaseAppDelegate.h */,
 				DA28358013392962009A4AEF /* MembaseAppDelegate.m */,
 				DA28358213392962009A4AEF /* MainMenu.xib */,
@@ -309,6 +314,7 @@
 			files = (
 				DA28357B13392962009A4AEF /* main.m in Sources */,
 				DA28358113392962009A4AEF /* MembaseAppDelegate.m in Sources */,
+				DA61C6D8133AFA770095F5CF /* LoginItemManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

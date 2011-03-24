@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "LoginItemManager.h"
+
 @interface MembaseAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     NSStatusItem *statusBar;
@@ -15,6 +17,7 @@
     
     IBOutlet NSMenuItem *launchBrowserItem;
     IBOutlet NSMenuItem *launchAtStartupItem;
+    IBOutlet LoginItemManager *loginItems;
     
     NSTask *task;
     NSTimer *taskKiller;

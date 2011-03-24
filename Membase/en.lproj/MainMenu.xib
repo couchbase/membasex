@@ -122,6 +122,9 @@
 					</object>
 				</object>
 			</object>
+			<object class="NSCustomObject" id="897323418">
+				<string key="NSClassName">LoginItemManager</string>
+			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -205,6 +208,14 @@
 						<reference key="destination" ref="258711508"/>
 					</object>
 					<int key="connectionID">552</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">loginItems</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="897323418"/>
+					</object>
+					<int key="connectionID">554</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -295,6 +306,11 @@
 						<reference key="object" ref="258711508"/>
 						<reference key="parent" ref="393957243"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">553</int>
+						<reference key="object" ref="897323418"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -313,9 +329,11 @@
 					<string>539.IBPluginDependency</string>
 					<string>540.IBPluginDependency</string>
 					<string>541.IBPluginDependency</string>
+					<string>553.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -342,11 +360,19 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">552</int>
+			<int key="maxID">554</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">LoginItemManager</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/LoginItemManager.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">MembaseAppDelegate</string>
 					<string key="superclassName">NSObject</string>
@@ -423,12 +449,14 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>launchAtStartupItem</string>
 							<string>launchBrowserItem</string>
+							<string>loginItems</string>
 							<string>statusMenu</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSMenuItem</string>
 							<string>NSMenuItem</string>
+							<string>LoginItemManager</string>
 							<string>NSMenu</string>
 						</object>
 					</object>
@@ -438,6 +466,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>launchAtStartupItem</string>
 							<string>launchBrowserItem</string>
+							<string>loginItems</string>
 							<string>statusMenu</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -449,6 +478,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">launchBrowserItem</string>
 								<string key="candidateClassName">NSMenuItem</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">loginItems</string>
+								<string key="candidateClassName">LoginItemManager</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">statusMenu</string>
