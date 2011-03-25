@@ -241,8 +241,8 @@
     } else {
         time_t now = time(NULL);
         if (now - startTime < MIN_LIFETIME) {
-            NSInteger b = NSRunAlertPanel(@"Problem Running Couchbase",
-                                          @"Couchbase Server doesn't seem to be operating properly.  "
+            NSInteger b = NSRunAlertPanel(@"Problem Running Membase",
+                                          @"Membase doesn't seem to be operating properly.  "
                                           @"Check Console logs for more details.", @"Retry", @"Quit", nil);
             if (b == NSAlertAlternateReturn) {
                 [NSApp terminate:self];
