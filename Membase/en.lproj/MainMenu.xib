@@ -114,7 +114,7 @@
 					</object>
 					<object class="NSMenuItem" id="258711508">
 						<reference key="NSMenu" ref="393957243"/>
-						<string key="NSTitle">Quit Membase Server</string>
+						<string key="NSTitle">Quit Membase</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="163241811"/>
