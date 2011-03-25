@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		DA9BAA9F133D1A5D0044882F /* Membase Zip */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DA9BAAA2133D1A5D0044882F /* Build configuration list for PBXAggregateTarget "Membase Zip" */;
+			buildPhases = (
+				DA9BAAA6133D1A670044882F /* Zip it up */,
+			);
+			dependencies = (
+				DA9BAAA5133D1A620044882F /* PBXTargetDependency */,
+			);
+			name = "Membase Zip";
+			productName = Zip;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		DA0FF0B51339A4B600B9E4DE /* install-membase.sh in Resources */ = {isa = PBXBuildFile; fileRef = DA0FF0B41339A4B600B9E4DE /* install-membase.sh */; };
 		DA28356E13392962009A4AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA28356D13392962009A4AEF /* Cocoa.framework */; };
@@ -26,6 +41,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		DA28358C13392962009A4AEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA28356013392961009A4AEF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA28356813392962009A4AEF;
+			remoteInfo = Membase;
+		};
+		DA9BAAA4133D1A620044882F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DA28356013392961009A4AEF /* Project object */;
 			proxyType = 1;
@@ -230,6 +252,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				DA9BAA9F133D1A5D0044882F /* Membase Zip */,
 				DA28356813392962009A4AEF /* Membase */,
 				DA28358913392962009A4AEF /* MembaseTests */,
 			);
@@ -305,6 +328,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		DA9BAAA6133D1A670044882F /* Zip it up */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Zip it up";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$BUILT_PRODUCTS_DIR\"\nV=$(/usr/libexec/PlistBuddy \"$PROJECT_NAME.app/Contents/Info.plist\" -c 'Print CFBundleVersion')\nzip -yr \"$PROJECT_NAME-$V.zip\" \"$PROJECT_NAME.app\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -333,6 +370,11 @@
 			isa = PBXTargetDependency;
 			target = DA28356813392962009A4AEF /* Membase */;
 			targetProxy = DA28358C13392962009A4AEF /* PBXContainerItemProxy */;
+		};
+		DA9BAAA5133D1A620044882F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA28356813392962009A4AEF /* Membase */;
+			targetProxy = DA9BAAA4133D1A620044882F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -470,6 +512,20 @@
 			};
 			name = Release;
 		};
+		DA9BAAA0133D1A5D0044882F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DA9BAAA1133D1A5D0044882F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -496,6 +552,15 @@
 			buildConfigurations = (
 				DA28359F13392962009A4AEF /* Debug */,
 				DA2835A013392962009A4AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA9BAAA2133D1A5D0044882F /* Build configuration list for PBXAggregateTarget "Membase Zip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA9BAAA0133D1A5D0044882F /* Debug */,
+				DA9BAAA1133D1A5D0044882F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
