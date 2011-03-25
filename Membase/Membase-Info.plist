@@ -33,6 +33,6 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SupportPage</key>
-	<string>http://www.couchbase.com/products-and-services/overview</string>
+	<string>http://techzone.couchbase.com/forums/membase/membase-server-16x</string>
 </dict>
 </plist>
