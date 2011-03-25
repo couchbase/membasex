@@ -2,3 +2,4 @@
 
 NSHumanReadableCopyright = "© 2011 Couchbase, Inc.";
 
+CFBundleName = "Membase Server";
