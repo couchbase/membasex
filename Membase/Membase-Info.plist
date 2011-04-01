@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.6.5</string>
+	<string>1.6.5.3</string>
 	<key>HomePage</key>
 	<string>http://127.0.0.1:8091/</string>
 	<key>LSApplicationCategoryType</key>
