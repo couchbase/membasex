@@ -34,5 +34,11 @@
 	<string>NSApplication</string>
 	<key>SupportPage</key>
 	<string>http://techzone.couchbase.com/forums/membase/membase-server-16x</string>
+	<key>SUEnableSystemProfiling</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>http://appcast.couchbase.com/membasex.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 </dict>
 </plist>

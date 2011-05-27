@@ -36,9 +36,12 @@
 		DA379BEB13393162008B7BBC /* Membase.icns in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEA13393162008B7BBC /* Membase.icns */; };
 		DA379BED13393242008B7BBC /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEC13393242008B7BBC /* Credits.html */; };
 		DA61C6D8133AFA770095F5CF /* LoginItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA61C6D7133AFA770095F5CF /* LoginItemManager.m */; };
+		DA68B83A138F87C900F279B9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA68B839138F87C900F279B9 /* Sparkle.framework */; };
 		DA6E272D138F7DD1006A9E64 /* Membase-status-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6E272B138F7DD1006A9E64 /* Membase-status-bw.png */; };
 		DA6E272E138F7DD1006A9E64 /* Membase-status-shutdown-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6E272C138F7DD1006A9E64 /* Membase-status-shutdown-bw.png */; };
 		DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7620041339DC3E0062715D /* Membase-status-shutdown.png */; };
+		DA780775138F8919007E3ECB /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = DA780774138F8919007E3ECB /* dsa_pub.pem */; };
+		DACBE494138F8A430004D86A /* Sparkle.framework in Install Sparkle */ = {isa = PBXBuildFile; fileRef = DA68B839138F87C900F279B9 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,20 @@
 			remoteInfo = Membase;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DACBE492138F8A1F0004D86A /* Install Sparkle */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DACBE494138F8A430004D86A /* Sparkle.framework in Install Sparkle */,
+			);
+			name = "Install Sparkle";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DA0FF0B41339A4B600B9E4DE /* install-membase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "install-membase.sh"; sourceTree = "<group>"; };
@@ -83,10 +100,12 @@
 		DA379BEC13393242008B7BBC /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA61C6D6133AFA770095F5CF /* LoginItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItemManager.h; sourceTree = "<group>"; };
 		DA61C6D7133AFA770095F5CF /* LoginItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginItemManager.m; sourceTree = "<group>"; };
+		DA68B839138F87C900F279B9 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		DA6E2729138F7A4B006A9E64 /* start.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = start.sh; sourceTree = "<group>"; };
 		DA6E272B138F7DD1006A9E64 /* Membase-status-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-bw.png"; sourceTree = "<group>"; };
 		DA6E272C138F7DD1006A9E64 /* Membase-status-shutdown-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-shutdown-bw.png"; sourceTree = "<group>"; };
 		DA7620041339DC3E0062715D /* Membase-status-shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-shutdown.png"; sourceTree = "<group>"; };
+		DA780774138F8919007E3ECB /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA28356E13392962009A4AEF /* Cocoa.framework in Frameworks */,
+				DA68B83A138F87C900F279B9 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +160,7 @@
 		DA28356F13392962009A4AEF /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA68B839138F87C900F279B9 /* Sparkle.framework */,
 				DA28357013392962009A4AEF /* AppKit.framework */,
 				DA28357113392962009A4AEF /* CoreData.framework */,
 				DA28357213392962009A4AEF /* Foundation.framework */,
@@ -163,6 +184,7 @@
 		DA28357413392962009A4AEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA780774138F8919007E3ECB /* dsa_pub.pem */,
 				DA6E272B138F7DD1006A9E64 /* Membase-status-bw.png */,
 				DA6E272C138F7DD1006A9E64 /* Membase-status-shutdown-bw.png */,
 				DA6E2729138F7A4B006A9E64 /* start.sh */,
@@ -208,6 +230,7 @@
 			buildPhases = (
 				DA28356513392962009A4AEF /* Sources */,
 				DA28356613392962009A4AEF /* Frameworks */,
+				DACBE492138F8A1F0004D86A /* Install Sparkle */,
 				DA28356713392962009A4AEF /* Resources */,
 				DA0FF09B13399B0D00B9E4DE /* Install Erlang */,
 				DA0FF0B31339A49300B9E4DE /* Install Membase */,
@@ -281,6 +304,7 @@
 				DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */,
 				DA6E272D138F7DD1006A9E64 /* Membase-status-bw.png in Resources */,
 				DA6E272E138F7DD1006A9E64 /* Membase-status-shutdown-bw.png in Resources */,
+				DA780775138F8919007E3ECB /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +477,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -469,6 +497,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Membase/Membase-Prefix.pch";
