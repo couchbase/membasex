@@ -36,6 +36,8 @@
 		DA379BEB13393162008B7BBC /* Membase.icns in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEA13393162008B7BBC /* Membase.icns */; };
 		DA379BED13393242008B7BBC /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEC13393242008B7BBC /* Credits.html */; };
 		DA61C6D8133AFA770095F5CF /* LoginItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA61C6D7133AFA770095F5CF /* LoginItemManager.m */; };
+		DA6E272D138F7DD1006A9E64 /* Membase-status-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6E272B138F7DD1006A9E64 /* Membase-status-bw.png */; };
+		DA6E272E138F7DD1006A9E64 /* Membase-status-shutdown-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6E272C138F7DD1006A9E64 /* Membase-status-shutdown-bw.png */; };
 		DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7620041339DC3E0062715D /* Membase-status-shutdown.png */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,8 @@
 		DA61C6D6133AFA770095F5CF /* LoginItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItemManager.h; sourceTree = "<group>"; };
 		DA61C6D7133AFA770095F5CF /* LoginItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginItemManager.m; sourceTree = "<group>"; };
 		DA6E2729138F7A4B006A9E64 /* start.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = start.sh; sourceTree = "<group>"; };
+		DA6E272B138F7DD1006A9E64 /* Membase-status-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-bw.png"; sourceTree = "<group>"; };
+		DA6E272C138F7DD1006A9E64 /* Membase-status-shutdown-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-shutdown-bw.png"; sourceTree = "<group>"; };
 		DA7620041339DC3E0062715D /* Membase-status-shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-shutdown.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +163,8 @@
 		DA28357413392962009A4AEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA6E272B138F7DD1006A9E64 /* Membase-status-bw.png */,
+				DA6E272C138F7DD1006A9E64 /* Membase-status-shutdown-bw.png */,
 				DA6E2729138F7A4B006A9E64 /* start.sh */,
 				DA7620041339DC3E0062715D /* Membase-status-shutdown.png */,
 				DA379BEC13393242008B7BBC /* Credits.html */,
@@ -273,6 +279,8 @@
 				DA379BED13393242008B7BBC /* Credits.html in Resources */,
 				DA0FF0B51339A4B600B9E4DE /* install-membase.sh in Resources */,
 				DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */,
+				DA6E272D138F7DD1006A9E64 /* Membase-status-bw.png in Resources */,
+				DA6E272E138F7DD1006A9E64 /* Membase-status-shutdown-bw.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
