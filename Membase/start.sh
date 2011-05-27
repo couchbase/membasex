@@ -25,12 +25,17 @@ export ERL_LIBS
 DONT_START_COUCH=1
 export DONT_START_COUCH
 
+mkdir -p "$datadir/etc/membase"
+
+sed -e "s|@DATA_PREFIX@|$datadir|g" -e "s|@BIN_PREFIX@|$MEMBASE_TOP|g" \
+    "$MEMBASE_TOP/etc/membase/static_config.in" > "$datadir/etc/membase/static_config"
+
 exec erl \
     +A 16 \
     -setcookie nocookie \
     -kernel inet_dist_listen_min 21100 inet_dist_listen_max 21299 \
     $* \
     -run ns_bootstrap -- \
-    -ns_server config_path "\"$MEMBASE_TOP/etc/membase/static_config\"" \
+    -ns_server config_path "\"$datadir/etc/membase/static_config\"" \
     -ns_server pidfile "\"$datadir/membase-server.pid\"" \
     -ns_server dont_suppress_stderr_logger true
