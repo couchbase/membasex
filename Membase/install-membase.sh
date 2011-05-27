@@ -25,6 +25,8 @@ mkdir -p "$dest/priv" "$dest/logs" "$dest/config" "$dest/tmp"
 cp "$topdir/ns_server/priv/init.sql" \
     "$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/init.sql"
 
+cd "$dest"
+
 # Fun with libraries
 for f in bin/*
 do

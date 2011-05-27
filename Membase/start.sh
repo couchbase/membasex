@@ -3,6 +3,11 @@
 MEMBASE_TOP=`pwd`
 export MEMBASE_TOP
 
+DYLD_LIBRARY_PATH="$MEMBASE_TOP:$MEMBASE_TOP/lib"
+export DYLD_LIBRARY_PATH
+
+echo DYLD_LIBRARY_PATH is "$DYLD_LIBRARY_PATH"
+
 erl -noshell -setcookie nocookie -sname init -run init stop 2>&1 > /dev/null
 if [ $? -ne 0 ]
 then
