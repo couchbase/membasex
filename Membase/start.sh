@@ -14,7 +14,7 @@ then
     exit 1
 fi
 
-datadir="$HOME/lib/Application Support/Membase"
+datadir="$HOME/Library/Application Support/Membase"
 
 test -d "$datadir" || mkdir -p "$datadir"
 cd "$datadir"
