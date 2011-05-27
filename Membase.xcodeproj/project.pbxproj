@@ -81,6 +81,7 @@
 		DA379BEC13393242008B7BBC /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA61C6D6133AFA770095F5CF /* LoginItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItemManager.h; sourceTree = "<group>"; };
 		DA61C6D7133AFA770095F5CF /* LoginItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginItemManager.m; sourceTree = "<group>"; };
+		DA6E2729138F7A4B006A9E64 /* start.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = start.sh; sourceTree = "<group>"; };
 		DA7620041339DC3E0062715D /* Membase-status-shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-shutdown.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +159,7 @@
 		DA28357413392962009A4AEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA6E2729138F7A4B006A9E64 /* start.sh */,
 				DA7620041339DC3E0062715D /* Membase-status-shutdown.png */,
 				DA379BEC13393242008B7BBC /* Credits.html */,
 				DA379BEA13393162008B7BBC /* Membase.icns */,

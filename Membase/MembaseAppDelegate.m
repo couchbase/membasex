@@ -196,19 +196,23 @@
     
     startTime = time(NULL);
 
-    NSDictionary *env = [NSDictionary dictionaryWithObjectsAndKeys:
-                         @"./bin:/bin:/usr/bin", @"PATH",
-                         NSHomeDirectory(), @"HOME",
-                         nil, nil];
-
 	NSMutableString *launchPath = [[NSMutableString alloc] init];
 	[launchPath appendString:[[NSBundle mainBundle] resourcePath]];
 	[launchPath appendString:@"/membase-core"];
 	[task setCurrentDirectoryPath:launchPath];
-    
-	[launchPath appendString:@"/start_shell.sh"];
-    NSLog(@"Launching '%@'", launchPath);
-	[task setLaunchPath:launchPath];
+
+    NSString *cmd = [launchPath stringByAppendingString:@"/start.sh"];
+
+    NSString *pathStr = [launchPath stringByAppendingString:@"/bin"];
+    pathStr = [pathStr stringByAppendingString:@":/bin:/usr/bin"];
+
+    NSDictionary *env = [NSDictionary dictionaryWithObjectsAndKeys:
+                         pathStr, @"PATH",
+                         NSHomeDirectory(), @"HOME",
+                         nil, nil];
+
+    NSLog(@"Launching '%@' in '%@'", cmd, launchPath);
+    [task setLaunchPath:cmd];
     [task setEnvironment:env];
 	[task setStandardInput:in];
 	[task setStandardOutput:out];
