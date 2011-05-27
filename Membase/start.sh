@@ -16,7 +16,7 @@ fi
 
 datadir="$HOME/Library/Application Support/Membase"
 
-test -d "$datadir" || mkdir -p "$datadir"
+mkdir -p "$datadir/var/lib/membase/logs"
 cd "$datadir"
 
 ERL_LIBS="$MEMBASE_TOP/lib/couchdb/erlang/lib:$MEMBASE_TOP/lib/ns_server/erlang/lib"
