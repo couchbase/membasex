@@ -332,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "VER=\"R14B01-OSX-10.6.6\"\nFN=\"erlang-$VER.tgz\"\nURL=\"http://downloads.northscale.com/builddeps/$FN\"\n\ndest=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/membase-core\"\nmkdir -p \"$dest\"\n\ntest -f \"$FN\" || curl -sfO \"$URL\"\n\ncd \"$dest\"\ngzip -dc \"$PROJECT_DIR/$FN\" | tar xf -\necho \"Installed erlang $VER into $dest\"";
+			shellScript = "VER=\"R14B03-OSX-10.6.8\"\nFN=\"erlang-$VER.tgz\"\nURL=\"http://downloads.northscale.com/builddeps/$FN\"\n\ndest=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/membase-core\"\nmkdir -p \"$dest\"\n\ntest -f \"$FN\" || curl -sfO \"$URL\"\n\ncd \"$dest\"\ngzip -dc \"$PROJECT_DIR/$FN\" | tar xf -\necho \"Installed erlang $VER into $dest\"";
 		};
 		DA0FF0B31339A49300B9E4DE /* Install Membase */ = {
 			isa = PBXShellScriptBuildPhase;
