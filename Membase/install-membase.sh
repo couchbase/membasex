@@ -34,6 +34,7 @@ for f in bin/*
 do
     fn="$dest/$f"
     otool -L "$fn" | egrep -v "^[/a-z]" | grep -v /usr/lib \
+	| grep -v /System \
         | sed -e 's/(\(.*\))//g' | clean_lib "$fn"
 done
 
@@ -41,5 +42,6 @@ done
 for fn in "$dest"/lib/*.dylib
 do
     otool -L "$fn" | egrep -v "^[/a-z]" | grep -v /usr/lib \
+	| grep -v /System \
         | sed -e 's/(\(.*\))//g' | clean_lib "$fn"
 done
