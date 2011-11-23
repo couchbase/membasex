@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.7.1</string>
+	<string>1.8.0</string>
 	<key>HomePage</key>
 	<string>http://127.0.0.1:8091/</string>
 	<key>LSApplicationCategoryType</key>
@@ -33,7 +33,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SupportPage</key>
-	<string>http://techzone.couchbase.com/forums/membase/membase-server-16x</string>
+	<string>http://www.couchbase.org/forums/couchbase/couchbase-server-18x</string>
 	<key>SUEnableSystemProfiling</key>
 	<true/>
 	<key>SUFeedURL</key>

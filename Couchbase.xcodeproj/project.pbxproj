@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		DA9BAA9F133D1A5D0044882F /* Membase Zip */ = {
+		DA9BAA9F133D1A5D0044882F /* Couchbase Zip */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = DA9BAAA2133D1A5D0044882F /* Build configuration list for PBXAggregateTarget "Membase Zip" */;
+			buildConfigurationList = DA9BAAA2133D1A5D0044882F /* Build configuration list for PBXAggregateTarget "Couchbase Zip" */;
 			buildPhases = (
 				DA9BAAA6133D1A670044882F /* Zip it up */,
 			);
 			dependencies = (
 				DA9BAAA5133D1A620044882F /* PBXTargetDependency */,
 			);
-			name = "Membase Zip";
+			name = "Couchbase Zip";
 			productName = Zip;
 		};
 /* End PBXAggregateTarget section */
@@ -77,7 +77,7 @@
 
 /* Begin PBXFileReference section */
 		DA0FF0B41339A4B600B9E4DE /* install-membase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "install-membase.sh"; sourceTree = "<group>"; };
-		DA28356913392962009A4AEF /* Membase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Membase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA28356913392962009A4AEF /* Membase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Membase.app; path = Couchbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA28356D13392962009A4AEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA28357013392962009A4AEF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DA28357113392962009A4AEF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -224,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA28356813392962009A4AEF /* Membase */ = {
+		DA28356813392962009A4AEF /* Couchbase */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA28359B13392962009A4AEF /* Build configuration list for PBXNativeTarget "Membase" */;
+			buildConfigurationList = DA28359B13392962009A4AEF /* Build configuration list for PBXNativeTarget "Couchbase" */;
 			buildPhases = (
 				DA28356513392962009A4AEF /* Sources */,
 				DA28356613392962009A4AEF /* Frameworks */,
@@ -239,7 +239,7 @@
 			);
 			dependencies = (
 			);
-			name = Membase;
+			name = Couchbase;
 			productName = Membase;
 			productReference = DA28356913392962009A4AEF /* Membase.app */;
 			productType = "com.apple.product-type.application";
@@ -269,9 +269,10 @@
 		DA28356013392961009A4AEF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = NorthScale;
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Couchbase;
 			};
-			buildConfigurationList = DA28356313392961009A4AEF /* Build configuration list for PBXProject "Membase" */;
+			buildConfigurationList = DA28356313392961009A4AEF /* Build configuration list for PBXProject "Couchbase" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -283,8 +284,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA9BAA9F133D1A5D0044882F /* Membase Zip */,
-				DA28356813392962009A4AEF /* Membase */,
+				DA9BAA9F133D1A5D0044882F /* Couchbase Zip */,
+				DA28356813392962009A4AEF /* Couchbase */,
 				DA28358913392962009A4AEF /* MembaseTests */,
 			);
 		};
@@ -332,7 +333,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "VER=\"R14B03-OSX-10.6.8\"\nFN=\"erlang-$VER.tgz\"\nURL=\"http://downloads.northscale.com/builddeps/$FN\"\n\ndest=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/membase-core\"\nmkdir -p \"$dest\"\n\ntest -f \"$FN\" || curl -sfO \"$URL\"\n\ncd \"$dest\"\ngzip -dc \"$PROJECT_DIR/$FN\" | tar xf -\necho \"Installed erlang $VER into $dest\"";
+			shellScript = "VER=\"R14B03-OSX-10.6.8\"\nFN=\"erlang-$VER.tgz\"\nURL=\"http://downloads.northscale.com/builddeps/$FN\"\n\ndest=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/couchbase-core\"\nmkdir -p \"$dest\"\n\ntest -f \"$FN\" || curl -sfO \"$URL\"\n\ncd \"$dest\"\ngzip -dc \"$PROJECT_DIR/$FN\" | tar xf -\necho \"Installed erlang $VER into $dest\"";
 		};
 		DA0FF0B31339A49300B9E4DE /* Install Membase */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -402,12 +403,12 @@
 /* Begin PBXTargetDependency section */
 		DA28358D13392962009A4AEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DA28356813392962009A4AEF /* Membase */;
+			target = DA28356813392962009A4AEF /* Couchbase */;
 			targetProxy = DA28358C13392962009A4AEF /* PBXContainerItemProxy */;
 		};
 		DA9BAAA5133D1A620044882F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DA28356813392962009A4AEF /* Membase */;
+			target = DA28356813392962009A4AEF /* Couchbase */;
 			targetProxy = DA9BAAA4133D1A620044882F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -571,7 +572,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA28356313392961009A4AEF /* Build configuration list for PBXProject "Membase" */ = {
+		DA28356313392961009A4AEF /* Build configuration list for PBXProject "Couchbase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA28359913392962009A4AEF /* Debug */,
@@ -580,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA28359B13392962009A4AEF /* Build configuration list for PBXNativeTarget "Membase" */ = {
+		DA28359B13392962009A4AEF /* Build configuration list for PBXNativeTarget "Couchbase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA28359C13392962009A4AEF /* Debug */,
@@ -598,7 +599,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA9BAAA2133D1A5D0044882F /* Build configuration list for PBXAggregateTarget "Membase Zip" */ = {
+		DA9BAAA2133D1A5D0044882F /* Build configuration list for PBXAggregateTarget "Couchbase Zip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA9BAAA0133D1A5D0044882F /* Debug */,

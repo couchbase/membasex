@@ -2,7 +2,7 @@
 
 topdir="$PROJECT_DIR/.."
 
-dest="$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/membase-core"
+dest="$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/couchbase-core"
 
 clean_lib() {
     while read something
@@ -20,8 +20,8 @@ rsync -a "$topdir/install/" "$dest/"
 cp "$PROJECT_DIR/Membase/erl" "$dest/bin/erl"
 cp "$PROJECT_DIR/Membase/erl" "$dest/lib/erlang/bin/erl"
 cp "$PROJECT_DIR/Membase/start.sh" "$dest/start.sh"
-rm "$dest/etc/membase/static_config"
-cp "$topdir/ns_server/etc/static_config.in" "$dest/etc/membase/static_config.in"
+rm "$dest/etc/couchbase/static_config"
+cp "$topdir/ns_server/etc/static_config.in" "$dest/etc/couchbase/static_config.in"
 
 mkdir -p "$dest/priv" "$dest/logs" "$dest/config" "$dest/tmp"
 cp "$topdir/ns_server/priv/init.sql" \

@@ -2,4 +2,5 @@
 
 NSHumanReadableCopyright = "© 2011 Couchbase, Inc.";
 
-CFBundleName = "Membase Server";
+CFBundleName = "Couchbase Server";
+CFBundleVersion = "1.8.0"

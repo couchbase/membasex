@@ -126,7 +126,7 @@
 }
 
 - (NSString *)applicationSupportFolder {
-    return [self applicationSupportFolder:@"Membase"];
+    return [self applicationSupportFolder:@"Couchbase"];
 }
 
 -(void)mkdirP:(NSString *)p {
@@ -169,13 +169,13 @@
 	NSMutableString *confFile = [[NSMutableString alloc] init];
     assert(confFile);
 	[confFile appendString:[[NSBundle mainBundle] resourcePath]];
-	[confFile appendString:@"/membase-core/priv/config"];
+	[confFile appendString:@"/couchbase-core/priv/config"];
     NSLog(@"Config file:  %@", confFile);
 
     // Fix up the packaged data dir
     NSString *dataDir = [appSupport stringByAppendingPathComponent:@"data"];
     NSString *appDataDir = [[[NSBundle mainBundle] resourcePath]
-                            stringByAppendingPathComponent:@"membase-core/data"];
+                            stringByAppendingPathComponent:@"couchbase-core/data"];
     if ([fileManager fileExistsAtPath:appDataDir]) {
         [fileManager removeItemAtPath:appDataDir error:nil];
     }
@@ -198,7 +198,7 @@
 
 	NSMutableString *launchPath = [[NSMutableString alloc] init];
 	[launchPath appendString:[[NSBundle mainBundle] resourcePath]];
-	[launchPath appendString:@"/membase-core"];
+	[launchPath appendString:@"/couchbase-core"];
 	[task setCurrentDirectoryPath:launchPath];
 
     NSString *cmd = [launchPath stringByAppendingString:@"/start.sh"];
@@ -245,8 +245,8 @@
     } else {
         time_t now = time(NULL);
         if (now - startTime < MIN_LIFETIME) {
-            NSInteger b = NSRunAlertPanel(@"Problem Running Membase",
-                                          @"Membase doesn't seem to be operating properly.  "
+            NSInteger b = NSRunAlertPanel(@"Problem Running Couchbase",
+                                          @"Couchbase doesn't seem to be operating properly.  "
                                           @"Check Console logs for more details.", @"Retry", @"Quit", nil);
             if (b == NSAlertAlternateReturn) {
                 [NSApp terminate:self];
@@ -296,7 +296,7 @@
                                         encoding: NSUTF8StringEncoding];
     
     if (!hasSeenStart) {
-        if ([s rangeOfString:@"Membase Server has started on web port 8091"].location != NSNotFound) {
+        if ([s rangeOfString:@"Couchbase Server has started on web port 8091"].location != NSNotFound) {
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             if ([defaults boolForKey:@"browseAtStart"]) {
                 [self openGUI];
