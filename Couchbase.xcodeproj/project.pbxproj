@@ -22,7 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		DA0FF0B51339A4B600B9E4DE /* install-membase.sh in Resources */ = {isa = PBXBuildFile; fileRef = DA0FF0B41339A4B600B9E4DE /* install-membase.sh */; };
+		DA0FF0B51339A4B600B9E4DE /* install-couchbase.sh in Resources */ = {isa = PBXBuildFile; fileRef = DA0FF0B41339A4B600B9E4DE /* install-couchbase.sh */; };
 		DA28356E13392962009A4AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA28356D13392962009A4AEF /* Cocoa.framework */; };
 		DA28357813392962009A4AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA28357613392962009A4AEF /* InfoPlist.strings */; };
 		DA28357B13392962009A4AEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA28357A13392962009A4AEF /* main.m */; };
@@ -76,7 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DA0FF0B41339A4B600B9E4DE /* install-membase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "install-membase.sh"; sourceTree = "<group>"; };
+		DA0FF0B41339A4B600B9E4DE /* install-couchbase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "install-couchbase.sh"; sourceTree = "<group>"; };
 		DA28356913392962009A4AEF /* Membase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Membase.app; path = Couchbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA28356D13392962009A4AEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA28357013392962009A4AEF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -196,7 +196,7 @@
 				DA28357613392962009A4AEF /* InfoPlist.strings */,
 				DA28357913392962009A4AEF /* Membase-Prefix.pch */,
 				DA28357A13392962009A4AEF /* main.m */,
-				DA0FF0B41339A4B600B9E4DE /* install-membase.sh */,
+				DA0FF0B41339A4B600B9E4DE /* install-couchbase.sh */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 				DA379BE91339314B008B7BBC /* Membase-status.png in Resources */,
 				DA379BEB13393162008B7BBC /* Membase.icns in Resources */,
 				DA379BED13393242008B7BBC /* Credits.html in Resources */,
-				DA0FF0B51339A4B600B9E4DE /* install-membase.sh in Resources */,
+				DA0FF0B51339A4B600B9E4DE /* install-couchbase.sh in Resources */,
 				DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */,
 				DA6E272D138F7DD1006A9E64 /* Membase-status-bw.png in Resources */,
 				DA6E272E138F7DD1006A9E64 /* Membase-status-shutdown-bw.png in Resources */,
@@ -341,7 +341,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Membase/install-membase.sh",
+				"$(SRCROOT)/Membase/install-couchbase.sh",
 			);
 			name = "Install Membase";
 			outputPaths = (
