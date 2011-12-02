@@ -2,5 +2,5 @@
 *~
 .DS_Store
 /build
-/erlang-*.tgz
+erlang-*.tgz
 xcuserdata

@@ -3,4 +3,4 @@
 NSHumanReadableCopyright = "© 2011 Couchbase, Inc.";
 
 CFBundleName = "Couchbase Server";
-CFBundleVersion = "1.8.0"
+CFBundleVersion = "1.8.0";

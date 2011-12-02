@@ -32,16 +32,16 @@
 		DA28359313392962009A4AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA28359113392962009A4AEF /* InfoPlist.strings */; };
 		DA28359613392962009A4AEF /* MembaseTests.h in Resources */ = {isa = PBXBuildFile; fileRef = DA28359513392962009A4AEF /* MembaseTests.h */; };
 		DA28359813392962009A4AEF /* MembaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA28359713392962009A4AEF /* MembaseTests.m */; };
-		DA379BE91339314B008B7BBC /* Membase-status.png in Resources */ = {isa = PBXBuildFile; fileRef = DA379BE81339314B008B7BBC /* Membase-status.png */; };
-		DA379BEB13393162008B7BBC /* Membase.icns in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEA13393162008B7BBC /* Membase.icns */; };
 		DA379BED13393242008B7BBC /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = DA379BEC13393242008B7BBC /* Credits.html */; };
 		DA61C6D8133AFA770095F5CF /* LoginItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA61C6D7133AFA770095F5CF /* LoginItemManager.m */; };
 		DA68B83A138F87C900F279B9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA68B839138F87C900F279B9 /* Sparkle.framework */; };
-		DA6E272D138F7DD1006A9E64 /* Membase-status-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6E272B138F7DD1006A9E64 /* Membase-status-bw.png */; };
-		DA6E272E138F7DD1006A9E64 /* Membase-status-shutdown-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6E272C138F7DD1006A9E64 /* Membase-status-shutdown-bw.png */; };
-		DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7620041339DC3E0062715D /* Membase-status-shutdown.png */; };
+		DA7620051339DC3E0062715D /* Couchbase-Status-shutdown.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7620041339DC3E0062715D /* Couchbase-Status-shutdown.png */; };
 		DA780775138F8919007E3ECB /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = DA780774138F8919007E3ECB /* dsa_pub.pem */; };
 		DACBE494138F8A430004D86A /* Sparkle.framework in Install Sparkle */ = {isa = PBXBuildFile; fileRef = DA68B839138F87C900F279B9 /* Sparkle.framework */; };
+		E8203EA8148B64C000941BC5 /* Couchbase.icns in Resources */ = {isa = PBXBuildFile; fileRef = E8203EA7148B63A700941BC5 /* Couchbase.icns */; };
+		E8203EA9148B64C100941BC5 /* Couchbase-Status-shutdown-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = E8203EA0148997DF00941BC5 /* Couchbase-Status-shutdown-bw.png */; };
+		E8203EAA148B64C100941BC5 /* Couchbase-Status-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = E8203E9D1489964200941BC5 /* Couchbase-Status-bw.png */; };
+		E8203EAB148B64C100941BC5 /* Couchbase-Status.png in Resources */ = {isa = PBXBuildFile; fileRef = E8203E9E1489964200941BC5 /* Couchbase-Status.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,17 +95,17 @@
 		DA28359413392962009A4AEF /* MembaseTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MembaseTests-Prefix.pch"; sourceTree = "<group>"; };
 		DA28359513392962009A4AEF /* MembaseTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MembaseTests.h; sourceTree = "<group>"; };
 		DA28359713392962009A4AEF /* MembaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MembaseTests.m; sourceTree = "<group>"; };
-		DA379BE81339314B008B7BBC /* Membase-status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status.png"; sourceTree = "<group>"; };
-		DA379BEA13393162008B7BBC /* Membase.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Membase.icns; sourceTree = SOURCE_ROOT; };
 		DA379BEC13393242008B7BBC /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA61C6D6133AFA770095F5CF /* LoginItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItemManager.h; sourceTree = "<group>"; };
 		DA61C6D7133AFA770095F5CF /* LoginItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginItemManager.m; sourceTree = "<group>"; };
 		DA68B839138F87C900F279B9 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		DA6E2729138F7A4B006A9E64 /* start.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = start.sh; sourceTree = "<group>"; };
-		DA6E272B138F7DD1006A9E64 /* Membase-status-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-bw.png"; sourceTree = "<group>"; };
-		DA6E272C138F7DD1006A9E64 /* Membase-status-shutdown-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-shutdown-bw.png"; sourceTree = "<group>"; };
-		DA7620041339DC3E0062715D /* Membase-status-shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Membase-status-shutdown.png"; sourceTree = "<group>"; };
+		DA7620041339DC3E0062715D /* Couchbase-Status-shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Couchbase-Status-shutdown.png"; sourceTree = "<group>"; };
 		DA780774138F8919007E3ECB /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		E8203E9D1489964200941BC5 /* Couchbase-Status-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Couchbase-Status-bw.png"; sourceTree = "<group>"; };
+		E8203E9E1489964200941BC5 /* Couchbase-Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Couchbase-Status.png"; sourceTree = "<group>"; };
+		E8203EA0148997DF00941BC5 /* Couchbase-Status-shutdown-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Couchbase-Status-shutdown-bw.png"; sourceTree = "<group>"; };
+		E8203EA7148B63A700941BC5 /* Couchbase.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Couchbase.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,14 +184,14 @@
 		DA28357413392962009A4AEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E8203EA7148B63A700941BC5 /* Couchbase.icns */,
+				E8203EA0148997DF00941BC5 /* Couchbase-Status-shutdown-bw.png */,
+				E8203E9D1489964200941BC5 /* Couchbase-Status-bw.png */,
+				E8203E9E1489964200941BC5 /* Couchbase-Status.png */,
 				DA780774138F8919007E3ECB /* dsa_pub.pem */,
-				DA6E272B138F7DD1006A9E64 /* Membase-status-bw.png */,
-				DA6E272C138F7DD1006A9E64 /* Membase-status-shutdown-bw.png */,
 				DA6E2729138F7A4B006A9E64 /* start.sh */,
-				DA7620041339DC3E0062715D /* Membase-status-shutdown.png */,
+				DA7620041339DC3E0062715D /* Couchbase-Status-shutdown.png */,
 				DA379BEC13393242008B7BBC /* Credits.html */,
-				DA379BEA13393162008B7BBC /* Membase.icns */,
-				DA379BE81339314B008B7BBC /* Membase-status.png */,
 				DA28357513392962009A4AEF /* Membase-Info.plist */,
 				DA28357613392962009A4AEF /* InfoPlist.strings */,
 				DA28357913392962009A4AEF /* Membase-Prefix.pch */,
@@ -296,15 +296,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8203EA8148B64C000941BC5 /* Couchbase.icns in Resources */,
+				E8203EA9148B64C100941BC5 /* Couchbase-Status-shutdown-bw.png in Resources */,
+				E8203EAA148B64C100941BC5 /* Couchbase-Status-bw.png in Resources */,
+				E8203EAB148B64C100941BC5 /* Couchbase-Status.png in Resources */,
 				DA28357813392962009A4AEF /* InfoPlist.strings in Resources */,
 				DA28358413392962009A4AEF /* MainMenu.xib in Resources */,
-				DA379BE91339314B008B7BBC /* Membase-status.png in Resources */,
-				DA379BEB13393162008B7BBC /* Membase.icns in Resources */,
 				DA379BED13393242008B7BBC /* Credits.html in Resources */,
 				DA0FF0B51339A4B600B9E4DE /* install-couchbase.sh in Resources */,
-				DA7620051339DC3E0062715D /* Membase-status-shutdown.png in Resources */,
-				DA6E272D138F7DD1006A9E64 /* Membase-status-bw.png in Resources */,
-				DA6E272E138F7DD1006A9E64 /* Membase-status-shutdown-bw.png in Resources */,
+				DA7620051339DC3E0062715D /* Couchbase-Status-shutdown.png in Resources */,
 				DA780775138F8919007E3ECB /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

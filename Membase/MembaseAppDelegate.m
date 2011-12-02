@@ -35,7 +35,7 @@
 
 -(void)teardown:(id)sender {
     shuttingDown = YES;
-    NSImage *statusIcon = [NSImage imageNamed:@"Membase-status-shutdown-bw.png"];
+    NSImage *statusIcon = [NSImage imageNamed:@"Couchbase-Status-shutdown-bw.png"];
     [statusBar setImage: statusIcon];
     [self stopTask];
 }
@@ -63,7 +63,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     statusBar=[[NSStatusBar systemStatusBar] statusItemWithLength: 30.0];
-    NSImage *statusIcon = [NSImage imageNamed:@"Membase-status-bw.png"];
+    NSImage *statusIcon = [NSImage imageNamed:@"Couchbase-Status-bw.png"];
     [statusBar setImage: statusIcon];
     [statusBar setMenu: statusMenu];
     [statusBar setEnabled:YES];
