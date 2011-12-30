@@ -44,7 +44,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="NSMenuItem" id="204303556">
 						<reference key="NSMenu" ref="393957243"/>
-						<string key="NSTitle">About Couchbase</string>
+						<string key="NSTitle">About Couchbase Server</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<object class="NSCustomResource" key="NSOnImage" id="163241811">
@@ -119,7 +119,7 @@
 					</object>
 					<object class="NSMenuItem" id="258711508">
 						<reference key="NSMenu" ref="393957243"/>
-						<string key="NSTitle">Quit Couchbase</string>
+						<string key="NSTitle">Quit Couchbase Server</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="163241811"/>
