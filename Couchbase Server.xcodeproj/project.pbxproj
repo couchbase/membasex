@@ -12,7 +12,6 @@
 			buildConfigurationList = DA9BAAA2133D1A5D0044882F /* Build configuration list for PBXAggregateTarget "Couchbase Server Zip" */;
 			buildPhases = (
 				DA9BAAA6133D1A670044882F /* Zip it up */,
-				E834527814AD1CA800D227A8 /* Rename zip and .app files */,
 				E8C114AE14A8BE97004C42BE /* Create a dmg */,
 			);
 			dependencies = (
@@ -379,20 +378,6 @@
 			shellPath = /bin/sh;
 			shellScript = "cd \"$BUILT_PRODUCTS_DIR\"\nV=$(/usr/libexec/PlistBuddy \"$PROJECT_NAME.app/Contents/Info.plist\" -c 'Print CFBundleVersion')\nditto -ck --keepParent \"$PROJECT_NAME.app\" \"$PROJECT_NAME-$V.zip\"\n";
 		};
-		E834527814AD1CA800D227A8 /* Rename zip and .app files */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Rename zip and .app files";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#cd \"$BUILT_PRODUCTS_DIR\"\n#mv $PROJECT_NAME.app \"Couchbase Server.app\"\n#mv $PROJECT_NAME*.zip \"Couchbase Server.zip\"";
-		};
 		E8C114AE14A8BE97004C42BE /* Create a dmg */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,7 +390,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$BUILT_PRODUCTS_DIR\"\ncp -rf $SRCROOT/makedmg/* .\ncp -f \"$SRCROOT/Membase/Couchbase Server.icns\" .\n./makedmg.sh \"Couchbase Server.dmg\" \"Couchbase Server.app\" \"Couchbase Server\" dmg-background.png Couchbase.icns";
+			shellScript = "cd \"$BUILT_PRODUCTS_DIR\"\nV=$(/usr/libexec/PlistBuddy \"$PROJECT_NAME.app/Contents/Info.plist\" -c 'Print CFBundleVersion')\ncp -rf $SRCROOT/makedmg/* .\ncp -f \"$SRCROOT/Membase/Couchbase Server.icns\" .\n./makedmg.sh \"Couchbase Server-$V.dmg\" \"Couchbase Server.app\" \"Couchbase Server\" dmg-background.png Couchbase.icns";
 		};
 /* End PBXShellScriptBuildPhase section */
 
