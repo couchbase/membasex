@@ -43,6 +43,7 @@
 		E8203EA9148B64C100941BC5 /* Couchbase-Status-shutdown-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = E8203EA0148997DF00941BC5 /* Couchbase-Status-shutdown-bw.png */; };
 		E8203EAA148B64C100941BC5 /* Couchbase-Status-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = E8203E9D1489964200941BC5 /* Couchbase-Status-bw.png */; };
 		E8203EAB148B64C100941BC5 /* Couchbase-Status.png in Resources */ = {isa = PBXBuildFile; fileRef = E8203E9E1489964200941BC5 /* Couchbase-Status.png */; };
+		E86DFE4514B74C720084AA7E /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E86DFE4114B74C500084AA7E /* LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,11 @@
 		E8203E9E1489964200941BC5 /* Couchbase-Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Couchbase-Status.png"; sourceTree = "<group>"; };
 		E8203EA0148997DF00941BC5 /* Couchbase-Status-shutdown-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Couchbase-Status-shutdown-bw.png"; sourceTree = "<group>"; };
 		E8203EA7148B63A700941BC5 /* Couchbase Server.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Couchbase Server.icns"; sourceTree = "<group>"; };
+		E86DFE4014B74C500084AA7E /* dmg-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dmg-background.png"; path = "makedmg/dmg-background.png"; sourceTree = SOURCE_ROOT; };
+		E86DFE4114B74C500084AA7E /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = makedmg/LICENSE.txt; sourceTree = SOURCE_ROOT; };
+		E86DFE4214B74C500084AA7E /* makedmg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = makedmg.sh; path = makedmg/makedmg.sh; sourceTree = SOURCE_ROOT; };
+		E86DFE4314B74C500084AA7E /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = makedmg/README.txt; sourceTree = SOURCE_ROOT; };
+		E86DFE4414B74C500084AA7E /* setviewoptions.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; name = setviewoptions.applescript; path = makedmg/setviewoptions.applescript; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,11 @@
 		DA28357413392962009A4AEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E86DFE4014B74C500084AA7E /* dmg-background.png */,
+				E86DFE4114B74C500084AA7E /* LICENSE.txt */,
+				E86DFE4214B74C500084AA7E /* makedmg.sh */,
+				E86DFE4314B74C500084AA7E /* README.txt */,
+				E86DFE4414B74C500084AA7E /* setviewoptions.applescript */,
 				E8203EA7148B63A700941BC5 /* Couchbase Server.icns */,
 				E8203EA0148997DF00941BC5 /* Couchbase-Status-shutdown-bw.png */,
 				E8203E9D1489964200941BC5 /* Couchbase-Status-bw.png */,
@@ -297,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86DFE4514B74C720084AA7E /* LICENSE.txt in Resources */,
 				E8203EA8148B64C000941BC5 /* Couchbase Server.icns in Resources */,
 				E8203EA9148B64C100941BC5 /* Couchbase-Status-shutdown-bw.png in Resources */,
 				E8203EAA148B64C100941BC5 /* Couchbase-Status-bw.png in Resources */,
