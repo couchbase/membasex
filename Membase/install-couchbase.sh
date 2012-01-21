@@ -67,4 +67,5 @@ sed -ie "s,$install_absolute_path,../,g" bin/cbdbconvert
 sed -ie "s,$install_absolute_path,../,g" bin/cbdbmaint
 sed -ie "s,$install_absolute_path,../,g" bin/cbdbupgrade
 sed -ie "s,$install_absolute_path,../,g" bin/cbrestore
+sed -ie "s,$install_absolute_path,../,g" bin/cbworkloadgen
 
